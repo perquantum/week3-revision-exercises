@@ -1,0 +1,76 @@
+<div class="container-fluid">
+
+    <button (click)="addNewData()" class="btn btn-primary">Add a New Player</button>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Sr No.</th>
+                <th>Player Name</th>
+                <th>Club</th>
+                <th>Nationality</th>
+                <th>Edit</th>
+                <th>Remove</th>
+            </tr>
+            <tr *ngFor="let p of players_data; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.club}}</td>
+                <td>{{p.nation}}</td>
+                <td>
+                    <button (click)="editData(p)" class="btn btn-primary">Edit Player</button>
+                </td>
+                <td>
+                    <button (click)="deleteData(p.id)" class="btn btn-danger">Remove Player</button>
+                </td>
+             </tr>
+        </tbody>
+    </table>
+
+    <div id="add-new-player" *ngIf="flag">
+        <h1>Add a New Player</h1>
+        <form [formGroup]="player" (submit)="postData()">
+            <div>
+            <label for="name">Name</label><br>
+            <input name="name" formControlName="name" type="text"><br>
+            </div>
+            <div>
+            <label for="club">Club</label><br>
+            <input name="club" formControlName="club" type="text"><br>
+            </div>
+            <div>
+            <label for="nation">Nation</label><br>
+            <input name="nation" formControlName="nation" type="text"><br>
+            </div>
+            <button class="btn btn-primary">Post</button>
+        </form>
+    </div>
+
+    <div id="add-new-player" *ngIf="flagForEdit" >
+        <form [formGroup]="playerEdit" (submit)="editData(playerEdit)">
+            <div>
+            <label for="name">Name</label><br>
+            <input name="name" formControlName="name" type="text" ngModel="{{name}}"><br>
+            </div>
+            <div>
+            <label for="club">Club</label><br>
+            <input name="club" formControlName="club" type="text" ngModel="{{club}}"><br>
+            </div>
+            <div>
+            <label for="nation">Nation</label><br>
+            <input name="nation" formControlName="nation" type="text" ngModel="{{nation}}"><br>
+            </div>
+            <button class="btn btn-primary">Push Changes</button>
+        </form>
+    </div>
+
+
+
+
+
+
+
+</div>
+
+
+<router-outlet></router-outlet>

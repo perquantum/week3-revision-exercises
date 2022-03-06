@@ -1,0 +1,34 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "Messi",
+      "club": "PSG",
+      "nation": "Argentina"
+    },
+    {
+      "id": 2,
+      "name": "Ronaldo",
+      "club": "Manchester United",
+      "nation": "Portugal"
+    },
+    {
+      "id": 3,
+      "name": "Pedri",
+      "club": "FC Barcelona",
+      "nation": "Spain"
+    },
+    {
+      "id": 4,
+      "name": "Lewandowski",
+      "club": "Bayern Munich",
+      "nation": "Poland"
+    },
+    {
+      "id": 758,
+      "name": "Paresh",
+      "club": "Barcelona",
+      "nation": "India"
+    }
+  ]
+}
